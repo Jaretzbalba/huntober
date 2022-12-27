@@ -25,7 +25,6 @@ var containsDuplicate = function (nums) {
       break;
     }
   }
-  console.log(count);
   return result;
 };
 
