@@ -7,15 +7,30 @@
 //  });
 // });
 
-function twoSum(nums, sum) {
-  //iterate through each number in array
-  let result = [];
-  nums.forEach((el, ind, arr) => {
-    for (let i = ind + 1; i < nums.length; i++) {
-      if (el + arr[i] === sum) result.push([el, arr[i]]);
-    }
-  });
-  return result;
-}
+// function twoSum(nums, sum) {
+//   //iterate through each number in array
+//   let result = [];
+//   nums.forEach((el, ind, arr) => {
+//     for (let i = ind + 1; i < nums.length; i++) {
+//       if (el + arr[i] === sum) result.push([el, arr[i]]);
+//     }
+//   });
+//   return result;
+// }
 
-console.log(twoSum([1, 2, 2, 3, 4, 0], 4));
+//OR
+
+const twoSum = (array, sum) => {
+  const pairs = [];
+  const store = [];
+
+  for (let part1 of array) {
+    const part2 = sum - part1;
+    if (store.indexOf(part2) !== -1) pairs.push([part1, part2]);
+    store.push(part1);
+  }
+
+  return pairs;
+};
+
+console.log(twoSum([1, 2, 2, 3, 4], 4));
