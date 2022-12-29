@@ -26,6 +26,7 @@ const twoSum = (array, sum) => {
 
   for (let part1 of array) {
     const part2 = sum - part1;
+    //if part2 exists in store array, push part1 and part2 to pair array
     if (store.indexOf(part2) !== -1) pairs.push([part1, part2]);
     store.push(part1);
   }
